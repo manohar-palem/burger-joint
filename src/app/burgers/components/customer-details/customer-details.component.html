@@ -1,0 +1,23 @@
+<div class="customer-details container">
+  <div class="row">
+    <div class="col-sm-8 col-md-8 col-lg-8 customer-details-form-wrapper">
+      <form class="form customer-details-form">
+        <div class="form-group">
+          <label class="form-label form-label-sm">Name</label>
+          <input type="text" class="form-control form-control-sm" placeholder="enter your name" name="name"
+            [(ngModel)]="customerDetails.name" (input)="onInputChange()">
+        </div>
+        <div class="form-group">
+          <label class="form-label form-label-sm">Phone</label>
+          <input type="text" class="form-control form-control-sm" placeholder="enter mobile number" name="phone"
+            [(ngModel)]="customerDetails.phone" (input)="onInputChange()">
+        </div>
+        <div class="form-group">
+          <label class="form-label form-label-sm">Email <span class="text-muted">(Optional)</span></label>
+          <input type="text" class="form-control form-control-sm" placeholder="enter email address" name="email"
+            [(ngModel)]="customerDetails.email" (input)="onInputChange()">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

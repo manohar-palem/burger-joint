@@ -1,0 +1,21 @@
+.burgers-component {
+  .card {
+    margin: 10px auto;
+    max-width: 250px;
+  }
+
+  .card-img-top {
+    // width: 65%;
+    margin: 0px auto;
+  }
+
+  .card-body {
+    background: #e5e7e8;
+  }
+
+  .card-text {
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

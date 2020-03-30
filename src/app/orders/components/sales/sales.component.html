@@ -1,0 +1,43 @@
+<div class="sales-component">
+
+  <div class="table-wrapper container">
+
+    <div class="row title">
+      <div class="col-sm-6"> <h5>Sales/Orders By Customer</h5> </div>
+      <div class="col-sm-6">
+        <input type="text" class="form-control  form-control-sm"
+          placeholder="Search by customer name / price" [(ngModel)]="searchStr">
+      </div>
+    </div>
+    <div class="mpl-table bordered" #tableElem [ngStyle]="{'max-height': (tableHeight+'px')}">
+      <div class="mpl-thead">
+        <div class="row">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-data"> Customer Name </div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-data"> Order Details </div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-data"> Price </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mpl-tbody">
+        <div class="row" *ngFor="let order of customerOrders | filter:searchStr: ['customerName', 'price']">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-data">{{order.customerName}}</div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-data"> {{order.totalOrders}} </div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-data">{{order.price | currency: 'INR'}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

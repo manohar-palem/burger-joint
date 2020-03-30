@@ -1,0 +1,33 @@
+.mpl-table {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &.rounded {
+    border-radius: 5px;
+  }
+
+  &.bordered {
+    border: 1px solid #ccc;
+
+    .row:not(:last-child) {
+      border-bottom: 1px solid #ccc;
+    }
+  }
+
+  .mpl-thead {
+    position: sticky;
+    background: #ffffff;
+    top: 0px;
+    z-index: 1;
+    border-bottom: 1px solid #ccc;
+
+    .col-data {
+      font-weight: bold;
+    }
+  }
+
+  .col-data {
+    padding: 5px 10px;
+  }
+}

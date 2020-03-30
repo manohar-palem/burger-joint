@@ -1,0 +1,23 @@
+<div class="orders-wrapper-component container">
+  <div>
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav nav-tabs justify-content-center">
+      <li ngbNavItem="1">
+        <a ngbNavLink>Orders</a>
+        <ng-template ngbNavContent>
+          <app-orders [orders]="orders"></app-orders>
+        </ng-template>
+      </li>
+      <li ngbNavItem="2">
+        <a ngbNavLink>Sales By Customer</a>
+        <ng-template ngbNavContent>
+          <app-sales [orders]="orders"></app-sales>
+        </ng-template>
+      </li>
+    </ul>
+
+    <div [ngbNavOutlet]="nav" class="ml-4"></div>
+  </div>
+
+  <!-- <app-orders [orders]="orders"></app-orders> -->
+
+</div>

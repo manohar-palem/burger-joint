@@ -1,0 +1,23 @@
+.amount-details {
+  .list-group-item {
+    min-width: 250px;
+    padding: 4px 12px;
+    color: #6c757d;
+    border-bottom-style: dashed;
+    font-size: 0.8rem;
+    direction: rtl;
+  }
+
+  .list-group-item.total-price-item {
+    font-size: inherit;
+    color: inherit;
+  }
+
+  .order-confirmation .card {
+    margin: 0px auto;
+    height: 250px;
+  }
+
+}
+
+

@@ -1,0 +1,62 @@
+.order-confirmation {
+  max-width: 600px;
+  margin: 0px auto;
+
+  .data-title {
+    margin-top: 15px;
+    border-bottom: 1px dashed #ddd;
+    display: inline-block;
+  }
+
+  .list-group-item {
+    min-width: 150px;
+    padding: 4px 12px;
+    color: #6c757d;
+    border-bottom-style: dashed;
+    font-size: 0.9rem;
+    border-bottom: 0px;
+  }
+
+  .list-group-item.total-price-item {
+    font-size: inherit;
+    color: inherit;
+  }
+
+  .price-details {
+    border-left: 1px dashed lightgray;
+
+    .badge {
+      color: lightgray;
+      font-size: 0.7rem;
+
+      &.charges {
+        color: #bd2130;
+      }
+
+      &.discount {
+        color: #1e7e34;
+      }
+    }
+  }
+
+  .price-details .badge.burger-price, .price-details .badge.total-price {
+    color:inherit;
+    font-size: inherit;
+  }
+
+  .order-btn-wrapper {
+    padding: 25px 0px 0px 0px;
+
+    .col {
+      margin: 0px auto;
+    }
+  }
+
+
+
+  .succes-wrapper {
+    padding: 30px;
+    text-align: center;
+  }
+
+}

@@ -1,0 +1,51 @@
+<div class="order-form container">
+
+  <ng-container *ngIf="isOrderSubmitted; then confirmationTemplate; else orderFormTemplate"></ng-container>
+
+  <ng-template #confirmationTemplate>
+    <app-order-confirmation [order]="order"></app-order-confirmation>
+  </ng-template>
+
+  <ng-template #orderFormTemplate>
+    <ul ngbNav #nav="ngbNav" [(activeId)]="currentTab" class="nav nav-tabs justify-content-center">
+      <li [ngbNavItem]="1">
+        <a ngbNavLink>Customize Burger</a>
+        <ng-template ngbNavContent>
+          <app-burger-customization
+            [ingredientOptions]="customizationOptions"
+            (quantityChanged)="onQuantityChanged($event)"
+            [burger]="order.burger">
+          </app-burger-customization>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="2">
+        <a ngbNavLink>Customer Details</a>
+        <ng-template ngbNavContent>
+          <app-customer-details
+            [customer]="order.customer"
+            (customerDetailsChanged)="onCustomerDetailsChanged($event)">
+          </app-customer-details>
+        </ng-template>
+      </li>
+      <li [ngbNavItem]="3">
+        <a ngbNavLink>Order Preview</a>
+        <ng-template ngbNavContent>
+          <app-order-preview
+            [order]="order"
+            (submitOrder)="onSubmitOrder()">
+          </app-order-preview>
+        </ng-template>
+      </li>
+    </ul>
+    <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+
+    <div class="d-flex justify-content-around">
+      <a class="btn btn-link" [routerLink]="['/burgers']" role="button" [hidden]="currentTab!==1"> Back</a>
+      <button class="btn btn-link" role="button" (click)="prev()" [hidden]="currentTab===1"> Back</button>
+      <button class="btn btn-link" role="button" (click)="next()" [hidden]="currentTab===3"> Next</button>
+      <span [hidden]="currentTab!==3"></span>
+    </div>
+  </ng-template>
+
+</div>
